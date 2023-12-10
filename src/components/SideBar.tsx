@@ -39,7 +39,6 @@ const SideBar = () => {
                     }
                     <CartSvg color={pathShop ? '#6666CC' : '#7D7D7D'}/>
                     <h3 className={`text-base font-medium ${pathShop ? 'text-red' : 'text-blackGray'}`}>Мой магазин</h3>
-
                 </Link>
             </div>
         </div>

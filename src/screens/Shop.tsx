@@ -8,13 +8,15 @@ import CrossSvg from "../assets/svg/cross";
 import Modal from "../components/Modal";
 import CreateModal from "../components/CreateModal";
 import EditModal from "../components/EditModal";
+import CustomAlert from "../components/CustomAlert";
 
 const Shop = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [newShop, setNewShop] = useState({id: Date.now(), name: '', address: ''});
     const [editingShop, setEditingShop] = useState({id: Date.now(), name: '', address: ''});
-
+    const [alertMessage, setAlertMessage] = useState('')
+    const [isAlertVisible, setIsAlertVisible] = useState(false);
     const dispatch = useDispatch();
 
     const shops = useSelector((state: any) => state.shop.shops);
@@ -62,7 +64,8 @@ const Shop = () => {
                 setEditingShop({...editingShop, name: newValue});
             }
         } else {
-            alert('Название магазина не может содержать "work5" или "work 5".');
+            setAlertMessage('Название магазина не может содержать "work 5".');
+            setIsAlertVisible(true);
         }
     };
 
@@ -78,10 +81,10 @@ const Shop = () => {
                 setEditingShop({...editingShop, address: newValue});
             }
         } else {
-            alert('Введите адрес на латинице.');
+            setAlertMessage('Введите адрес на латинице.');
+            setIsAlertVisible(true);
         }
     };
-
     return (
         <div className='w-full pl-20 pt-6 flex flex-col gap-10'>
             <div>
@@ -147,6 +150,9 @@ const Shop = () => {
                     editingShop={editingShop}
                 />
             </Modal>
+            {isAlertVisible &&
+             <CustomAlert message={alertMessage} onClose={() => setIsAlertVisible(false)} />
+            }
         </div>
     );
 };
