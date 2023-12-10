@@ -98,9 +98,9 @@ const Shop = () => {
             <div>
                 <h3 className='text-2xl font-medium'>Управление магазинами</h3>
             </div>
-            <div className='w-[1300px] bg-white flex-1'>
+            <div className='w-[1100px] bg-white flex-1'>
                 <table className='w-full'>
-                    <thead>
+                    <thead className='bg-white'>
                     <tr>
                         <th className='w-72 py-2 px-4 text-left font-medium'>№</th>
                         <th className='w-72 py-2 px-4 text-left font-medium'>Название</th>
@@ -108,7 +108,7 @@ const Shop = () => {
                         <th className='w-72 py-2 px-4 text-left font-medium'/>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='bg-white'>
                     {shops.map((shop: any, index: number) => (
                         <tr key={index} className='border-b'>
                             <td className='w-72py-2 px-4 text-left'>{index + 1}</td>

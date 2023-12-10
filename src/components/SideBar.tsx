@@ -9,7 +9,7 @@ const SideBar = () => {
     const pathHome = location.pathname === '/'
     const pathShop = location.pathname === '/shop'
     return (
-        <div className='w-1/6 h-screen pr-3'>
+        <div className='w-[256px] h-screen pr-3'>
             <div className='pt-5 pl-8'>
                 <Logo/>
             </div>

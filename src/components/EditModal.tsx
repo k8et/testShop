@@ -22,8 +22,10 @@ const EditModal: FC<EditModalProps> = (props) => {
                         type="text"
                         placeholder="Название"
                         value={editingShop.name}
+                        maxLength={30}
                         onChange={(e) => handleNameChange(e, 'editingShop')}
                     />
+
                 </div>
                 <div className='flex flex-col'>
                     <label className='text-sm font-medium'>Адрес</label>
@@ -32,6 +34,7 @@ const EditModal: FC<EditModalProps> = (props) => {
                         type="text"
                         placeholder="Адрес"
                         value={editingShop.address}
+                        maxLength={30}
                         onChange={(e) => handleAddressChange(e, 'editingShop')}
                     />
                 </div>

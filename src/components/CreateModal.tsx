@@ -22,6 +22,7 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
                         type="text"
                         placeholder="Название"
                         value={newShop.name}
+                        maxLength={30}
                         onChange={(e) => handleNameChange(e, 'newShop')}
                     />
                 </div>
@@ -32,6 +33,7 @@ const CreateModal: React.FC<CreateModalProps> = (props) => {
                         type="text"
                         placeholder="Адрес"
                         value={newShop.address}
+                        maxLength={30}
                         onChange={(e) => handleAddressChange(e, 'newShop')}
                     />
                 </div>
