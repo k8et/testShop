@@ -1,16 +1,7 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
 import WarningSvg from '../assets/svg/WarningSvg';
+import {CreateModalProps} from "../intarface/CreateModalProps";
 
-interface CreateModalProps {
-    closeModal: () => void;
-    handleCreateShop: () => void;
-    handleNameChange: (e: ChangeEvent<HTMLInputElement>, shopState: string) => void;
-    handleAddressChange: (e: ChangeEvent<HTMLInputElement>, shopState: string) => void;
-    newShop: {
-        name: string;
-        address: string;
-    };
-}
 
 const CreateModal: React.FC<CreateModalProps> = (props) => {
     const {

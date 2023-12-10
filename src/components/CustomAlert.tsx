@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import React, {FC, useEffect} from 'react';
+import {CustomAlertProps} from "../intarface/CustomAlertProps";
 
-interface CustomAlertProps {
-    message: string;
-    onClose: () => void;
-}
 
-const CustomAlert: React.FC<CustomAlertProps> = ({ message, onClose }) => {
+const CustomAlert: FC<CustomAlertProps> = ({message, onClose}) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             onClose();

@@ -1,20 +1,9 @@
-import React, {ChangeEvent} from 'react';
+import React, {FC} from 'react';
 import WarningSvg from '../assets/svg/WarningSvg';
+import {EditModalProps} from "../intarface/EditModalProps";
 
-interface Shop {
-    name: string;
-    address: string;
-}
 
-interface EditModalProps {
-    editingShop: Shop;
-    handleNameChange: (e: ChangeEvent<HTMLInputElement>, shopState: string) => void;
-    handleAddressChange: (e: ChangeEvent<HTMLInputElement>, shopState: string) => void;
-    closeEditModal: () => void;
-    handleEdit: () => void;
-}
-
-const EditModal: React.FC<EditModalProps> = (props) => {
+const EditModal: FC<EditModalProps> = (props) => {
     const {
         editingShop,
         handleNameChange,
